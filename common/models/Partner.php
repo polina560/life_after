@@ -3,6 +3,8 @@
 namespace common\models;
 
 use common\models\AppActiveRecord;
+use OpenApi\Attributes\Property;
+use OpenApi\Attributes\Schema;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -14,6 +16,14 @@ use yii\helpers\ArrayHelper;
  * @property string|null $logo  Логотип партнера
  * @property string|null $link  Ссылка на сайт партнера
  */
+
+#[Schema (properties: [
+    new Property(property: 'id', type: 'integer'),
+    new Property(property: 'title', type: 'string'),
+    new Property(property: 'logo', type: 'string'),
+    new Property(property: 'link', type: 'string'),
+
+])]
 class Partner extends AppActiveRecord
 {
     /**
@@ -32,6 +42,16 @@ class Partner extends AppActiveRecord
         return [
             [['title'], 'required'],
             [['title', 'logo', 'link'], 'string', 'max' => 255]
+        ];
+    }
+
+    final public function fields(): array
+    {
+        return [
+            'id',
+            'title',
+            'logo' => Yii::$app->request->hostInfo . $this->logo,
+            'link'
         ];
     }
 

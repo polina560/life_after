@@ -3,6 +3,8 @@
 namespace common\models;
 
 use common\models\AppActiveRecord;
+use OpenApi\Attributes\Property;
+use OpenApi\Attributes\Schema;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -20,6 +22,21 @@ use yii\helpers\ArrayHelper;
  * @property string|null $story           История
  * @property string|null $link            Ссылка
  */
+
+#[Schema (properties: [
+    new Property(property: 'id', type: 'integer'),
+    new Property(property: 'title', type: 'string'),
+    new Property(property: 'accusation', type: 'string'),
+    new Property(property: 'first_name', type: 'string'),
+    new Property(property: 'middle_name', type: 'string'),
+    new Property(property: 'last_name', type: 'string'),
+    new Property(property: 'add_information', type: 'string'),
+    new Property(property: 'desktop_photo', type: 'string'),
+    new Property(property: 'mobile_photo', type: 'string'),
+    new Property(property: 'story', type: 'string'),
+    new Property(property: 'link', type: 'string'),
+
+])]
 class Story extends AppActiveRecord
 {
     /**
@@ -39,6 +56,22 @@ class Story extends AppActiveRecord
             [['accusation', 'first_name', 'middle_name', 'last_name'], 'required'],
             [['story'], 'string'],
             [['accusation', 'first_name', 'middle_name', 'last_name', 'add_information', 'desktop_photo', 'mobile_photo', 'link'], 'string', 'max' => 255]
+        ];
+    }
+
+    final public function fields(): array
+    {
+        return [
+            'id',
+            'accusation',
+            'first_name',
+            'middle_name',
+            'last_name',
+            'add_information',
+            'desktop_photo' => fn() => Yii::$app->request->hostInfo . $this->desktop_photo,
+            'mobile_photo' => fn() => Yii::$app->request->hostInfo . $this->mobile_photo,
+            'story',
+            'link',
         ];
     }
 

@@ -3,6 +3,8 @@
 namespace common\models;
 
 use common\models\AppActiveRecord;
+use OpenApi\Attributes\Property;
+use OpenApi\Attributes\Schema;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -15,6 +17,15 @@ use yii\helpers\ArrayHelper;
  * @property string      $description Описание
  * @property string      $link        Ссылка
  */
+
+#[Schema (properties: [
+    new Property(property: 'id', type: 'integer'),
+    new Property(property: 'date', type: 'integer'),
+    new Property(property: 'title', type: 'string'),
+    new Property(property: 'description', type: 'string'),
+    new Property(property: 'link', type: 'string'),
+
+])]
 class News extends AppActiveRecord
 {
     /**
@@ -36,6 +47,18 @@ class News extends AppActiveRecord
             [['title', 'description', 'link'], 'string', 'max' => 255]
         ];
     }
+
+    final public function fields(): array
+    {
+        return [
+            'id',
+            'date',
+            'title',
+            'description',
+            'link'
+        ];
+    }
+
 
     /**
      * {@inheritdoc}
