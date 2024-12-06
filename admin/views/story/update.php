@@ -9,9 +9,7 @@ use yii\bootstrap5\Html;
  * @var $model common\models\Story
  */
 
-$this->title = Yii::t('app', 'Update Story: {name}', [
-    'name' => $model->id,
-]);
+$this->title = Yii::t('app', 'Update: ') . $model->id;
 $this->params['breadcrumbs'][] = [
     'label' => Yii::t('app', 'Stories'),
     'url' => UserUrl::setFilters(StorySearch::class)

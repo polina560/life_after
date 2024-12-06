@@ -9,9 +9,7 @@ use yii\bootstrap5\Html;
  * @var $model common\models\Partner
  */
 
-$this->title = Yii::t('app', 'Update Partner: {name}', [
-    'name' => $model->title,
-]);
+$this->title = Yii::t('app', 'Update: ') . $model->title;
 $this->params['breadcrumbs'][] = [
     'label' => Yii::t('app', 'Partners'),
     'url' => UserUrl::setFilters(PartnerSearch::class)

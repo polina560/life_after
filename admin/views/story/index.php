@@ -19,10 +19,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="story-index">
 
+    <br>
     <h1><?= RbacHtml::encode($this->title) ?></h1>
+    <br>
 
     <div>
-        <?= 
+        <?=
             RbacHtml::a(Yii::t('app', 'Create Story'), ['create'], ['class' => 'btn btn-success']);
 //           $this->render('_create_modal', ['model' => $model]);
         ?>
@@ -39,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             Column::widget(['attr' => 'accusation']),
             Column::widget(['attr' => 'first_name']),
             Column::widget(['attr' => 'middle_name']),
-            Column::widget(['attr' => 'last_name']),
-//            Column::widget(['attr' => 'add_information']),
+//            Column::widget(['attr' => 'last_name']),
+            Column::widget(['attr' => 'add_information']),
 //            Column::widget(['attr' => 'desktop_photo']),
 //            Column::widget(['attr' => 'mobile_photo']),
 //            Column::widget(['attr' => 'story', 'format' => 'ntext']),

@@ -100,7 +100,8 @@ return [
         ],
 
         'formatter' => [
-            'nullDisplay' => Html::tag('span', 'Не задано', ['class' => 'text-muted'])
+            'nullDisplay' => Html::tag('span', 'Не задано', ['class' => 'text-muted']),
+            'datetimeFormat' => 'd-M-Y',
         ],
 
         'view' => [

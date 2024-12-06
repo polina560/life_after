@@ -2,9 +2,11 @@
 
 use admin\components\GroupedActionColumn;
 use admin\components\widgets\gridView\Column;
+use admin\components\widgets\gridView\ColumnDate;
 use admin\modules\rbac\components\RbacHtml;
 use admin\widgets\sortableGridView\SortableGridView;
 use kartik\grid\SerialColumn;
+use yii\grid\DataColumn;
 use yii\widgets\ListView;
 
 /**
@@ -19,10 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
 
+    <br>
     <h1><?= RbacHtml::encode($this->title) ?></h1>
+    <br>
 
     <div>
-        <?= 
+        <?=
             RbacHtml::a(Yii::t('app', 'Create News'), ['create'], ['class' => 'btn btn-success']);
 //           $this->render('_create_modal', ['model' => $model]);
         ?>
@@ -36,10 +40,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => SerialColumn::class],
 
             Column::widget(),
-            Column::widget(['attr' => 'date']),
+            ColumnDate::widget(['attr' => 'date','searchModel' => $searchModel, 'withTime' => false]),
             Column::widget(['attr' => 'title']),
-            Column::widget(['attr' => 'description']),
-            Column::widget(['attr' => 'link']),
+//            Column::widget(['attr' => 'description']),
+//            Column::widget(['attr' => 'link']),
 
             ['class' => GroupedActionColumn::class]
         ]

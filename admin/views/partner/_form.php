@@ -1,5 +1,6 @@
 <?php
 
+use admin\widgets\ckfinder\CKFinderInputFile;
 use common\widgets\AppActiveForm;
 use kartik\icons\Icon;
 use yii\bootstrap5\Html;
@@ -19,7 +20,7 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'logo')->widget(CKFinderInputFile::class) ?>
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 

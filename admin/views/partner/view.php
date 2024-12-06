@@ -1,6 +1,7 @@
 <?php
 
 use admin\components\widgets\detailView\Column;
+use admin\components\widgets\detailView\ColumnImage;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
 use common\models\PartnerSearch;
@@ -42,7 +43,7 @@ $this->params['breadcrumbs'][] = RbacHtml::encode($this->title);
         'attributes' => [
             Column::widget(),
             Column::widget(['attr' => 'title']),
-            Column::widget(['attr' => 'logo']),
+            ColumnImage::widget(['attr' => 'logo']),
             Column::widget(['attr' => 'link']),
         ]
     ]) ?>

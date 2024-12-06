@@ -9,9 +9,7 @@ use yii\bootstrap5\Html;
  * @var $model common\models\News
  */
 
-$this->title = Yii::t('app', 'Update News: {name}', [
-    'name' => $model->title,
-]);
+$this->title = Yii::t('app', 'Update: ') . $model->title;
 $this->params['breadcrumbs'][] = [
     'label' => Yii::t('app', 'News'),
     'url' => UserUrl::setFilters(NewsSearch::class)

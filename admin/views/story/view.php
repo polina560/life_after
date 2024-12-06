@@ -1,6 +1,7 @@
 <?php
 
 use admin\components\widgets\detailView\Column;
+use admin\components\widgets\detailView\ColumnImage;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
 use common\models\StorySearch;
@@ -46,9 +47,9 @@ $this->params['breadcrumbs'][] = RbacHtml::encode($this->title);
             Column::widget(['attr' => 'middle_name']),
             Column::widget(['attr' => 'last_name']),
             Column::widget(['attr' => 'add_information']),
-            Column::widget(['attr' => 'desktop_photo']),
-            Column::widget(['attr' => 'mobile_photo']),
-            Column::widget(['attr' => 'story', 'format' => 'ntext']),
+            ColumnImage::widget(['attr' => 'desktop_photo']),
+            ColumnImage::widget(['attr' => 'mobile_photo']),
+            Column::widget(['attr' => 'story', 'format' => 'html']),
             Column::widget(['attr' => 'link']),
         ]
     ]) ?>

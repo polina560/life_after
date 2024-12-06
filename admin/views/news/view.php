@@ -1,9 +1,11 @@
 <?php
 
 use admin\components\widgets\detailView\Column;
+use admin\components\widgets\gridView\ColumnDate;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
 use common\models\NewsSearch;
+use yii\grid\DataColumn;
 use yii\widgets\DetailView;
 
 /**
@@ -41,7 +43,7 @@ $this->params['breadcrumbs'][] = RbacHtml::encode($this->title);
         'model' => $model,
         'attributes' => [
             Column::widget(),
-            Column::widget(['attr' => 'date']),
+            Column::widget(['attr' => 'date', 'format' => 'date']),
             Column::widget(['attr' => 'title']),
             Column::widget(['attr' => 'description']),
             Column::widget(['attr' => 'link']),

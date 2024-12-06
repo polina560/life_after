@@ -1,5 +1,7 @@
 <?php
 
+use admin\widgets\ckeditor\EditorClassic;
+use admin\widgets\ckfinder\CKFinderInputFile;
 use common\widgets\AppActiveForm;
 use kartik\icons\Icon;
 use yii\bootstrap5\Html;
@@ -27,11 +29,11 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'add_information')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'desktop_photo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'desktop_photo')->widget(CKFinderInputFile::class) ?>
 
-    <?= $form->field($model, 'mobile_photo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'mobile_photo')->widget(CKFinderInputFile::class) ?>
 
-    <?= $form->field($model, 'story')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'story')->widget(EditorClassic::class) ?>
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 

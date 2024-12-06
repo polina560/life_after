@@ -19,10 +19,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="partner-index">
 
+    <br>
     <h1><?= RbacHtml::encode($this->title) ?></h1>
+    <br>
 
     <div>
-        <?= 
+        <?=
             RbacHtml::a(Yii::t('app', 'Create Partner'), ['create'], ['class' => 'btn btn-success']);
 //           $this->render('_create_modal', ['model' => $model]);
         ?>
@@ -37,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             Column::widget(),
             Column::widget(['attr' => 'title']),
-            Column::widget(['attr' => 'logo']),
+//            Column::widget(['attr' => 'logo']),
             Column::widget(['attr' => 'link']),
 
             ['class' => GroupedActionColumn::class]

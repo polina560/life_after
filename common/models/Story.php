@@ -53,7 +53,7 @@ class Story extends AppActiveRecord
             'first_name' => Yii::t('app', 'First Name'),
             'middle_name' => Yii::t('app', 'Middle Name'),
             'last_name' => Yii::t('app', 'Last Name'),
-            'add_information' => Yii::t('app', 'Add Information'),
+            'add_information' => Yii::t('app', 'Additional Information'),
             'desktop_photo' => Yii::t('app', 'Desktop Photo'),
             'mobile_photo' => Yii::t('app', 'Mobile Photo'),
             'story' => Yii::t('app', 'Story'),

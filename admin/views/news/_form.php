@@ -17,7 +17,7 @@ use yii\helpers\Url;
 
     <?php $form = AppActiveForm::begin() ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
+    <?= $form->field($model, 'date')->widget(\admin\widgets\input\DatePicker::class) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
