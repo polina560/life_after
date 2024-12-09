@@ -52,7 +52,6 @@ class News extends AppActiveRecord
     final public function fields(): array
     {
         return [
-
             'id',
             'date',
             'title',

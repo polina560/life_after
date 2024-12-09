@@ -69,7 +69,7 @@ if (!Yii::$app->user->isGuest) {
             'label' => Icon::show('file-alt') . 'Данные участников',
             'items' => [
                 [
-                    'label' => Yii::t('app', 'Questionnaires Data'),
+                    'label' => Yii::t('app', 'Questionnaire Data'),
                     'url' => UserUrl::setFilters(QuestionnaireSearch::class, ['/questionnaire/index'])
                 ],
                 [

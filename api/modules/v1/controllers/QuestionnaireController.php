@@ -35,10 +35,10 @@ class QuestionnaireController extends AppController
     #[RequestFormData(
         properties: [
             new Property(property: 'full_name', description: 'Имя', type: 'string'),
-            new Property(property: 'age', description: 'E-mail', type: 'integer'),
-            new Property(property: 'city', description: 'Сообщение', type: 'string'),
-            new Property(property: 'status', description: 'Сообщение', type: 'integer'),
-            new Property(property: 'work', description: 'Сообщение', type: 'boolean'),
+            new Property(property: 'age', description: 'Возраст', type: 'integer'),
+            new Property(property: 'city', description: 'Город', type: 'string'),
+            new Property(property: 'status', description: 'Статус', type: 'integer'),
+            new Property(property: 'work', description: 'Наличие работы', type: 'boolean'),
         ]
     )]
     #[JsonSuccess(content: [

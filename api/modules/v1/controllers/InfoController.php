@@ -33,7 +33,7 @@ class InfoController extends AppController
         description: 'Отправляет данные формы',
         summary: 'Данные из формы',
         security: [['bearerAuth' => []]],
-        tags: ['info-data']
+        tags: ['info']
     )]
     #[RequestFormData(
         properties: [
@@ -43,8 +43,8 @@ class InfoController extends AppController
     )]
     #[JsonSuccess(content: [
         new Property(
-            property: 'form-data', type: 'array',
-            items: new Items(ref: '#/components/schemas/FormData'),
+            property: 'info', type: 'array',
+            items: new Items(ref: '#/components/schemas/Info'),
         )
     ])]
     public function actionIndex(): array
@@ -52,6 +52,11 @@ class InfoController extends AppController
         $name = $this->getParameterFromRequest('name');
         $email = $this->getParameterFromRequest('email');
 
+        $emailModel = Info::findOne(['email' => $email]);
+
+        if(!empty($emailModel)){
+            return $this->returnError(['Вы уже оставляли запрос']);
+        }
         if (empty($name) ) {
             return $this->returnError(['Поле name не заполнено или заполнено некорректно']);
         }
@@ -73,7 +78,6 @@ class InfoController extends AppController
                 'errors' => $form->getErrors(),
             ];
         }
-
 
     }
 }

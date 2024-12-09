@@ -191,6 +191,8 @@ return [
     'Create Story' => 'Добавить историю',
 
     'Questionnaire Data' => 'Данные из анкеты',
+    'Questionnaires' => 'Aнкеты',
+    'Request of Additional Information' => 'Запросы дополнительной информации',
     'Form Data' => 'Данные из формы',
 
 

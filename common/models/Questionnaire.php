@@ -65,6 +65,18 @@ class Questionnaire extends AppActiveRecord
         ];
     }
 
+    final public function fields(): array
+    {
+        return [
+            'full_name',
+            'age',
+            'city',
+            'status',
+            'work',
+            'created_at',
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */

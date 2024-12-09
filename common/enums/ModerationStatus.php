@@ -13,8 +13,7 @@ enum ModerationStatus: int implements DictionaryInterface
     use DictionaryTrait;
 
     case New = 0;
-    case Approved = 10;
-    case Rejected = 20;
+    case Processed = 10;
 
     /**
      * {@inheritdoc}
@@ -23,8 +22,8 @@ enum ModerationStatus: int implements DictionaryInterface
     {
         return match ($this) {
             self::New => 'Новое',
-            self::Approved => 'Одобрено',
-            self::Rejected => 'Отклонено'
+            self::Processed => 'Обработано',
+
         };
     }
 
@@ -35,8 +34,8 @@ enum ModerationStatus: int implements DictionaryInterface
     {
         return match ($this) {
             self::New => 'var(--bs-body-color)',
-            self::Approved => 'var(--bs-success)',
-            self::Rejected => 'var(--bs-danger)'
+            self::Processed => 'var(--bs-success)',
+
         };
     }
 }

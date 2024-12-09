@@ -59,6 +59,15 @@ class Info extends AppActiveRecord
         ];
     }
 
+    final public function fields(): array
+    {
+        return [
+            'id',
+            'name',
+            'email',
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -22,12 +22,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= RbacHtml::encode($this->title) ?></h1>
 
-    <div>
-        <?= 
-            RbacHtml::a(Yii::t('app', 'Create Questionnaire'), ['create'], ['class' => 'btn btn-success']);
-//           $this->render('_create_modal', ['model' => $model]);
-        ?>
-    </div>
 
     <?= SortableGridView::widget([
         'dataProvider' => $dataProvider,
@@ -37,14 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => SerialColumn::class],
 
             Column::widget(),
-            Column::widget(['attr' => 'full_name']),
-            Column::widget(['attr' => 'age']),
-            Column::widget(['attr' => 'city']),
-            Column::widget(['attr' => 'status']),
-//            Column::widget(['attr' => 'work']),
-//            ColumnDate::widget(['attr' => 'created_at', 'searchModel' => $searchModel, 'editable' => false]),
+            Column::widget(['attr' => 'full_name', 'editable' => false]),
+            Column::widget(['attr' => 'age', 'editable' => false]),
+            Column::widget(['attr' => 'city', 'editable' => false]),
+            Column::widget(['attr' => 'status', 'editable' => false]),
+            Column::widget(['attr' => 'work', 'editable' => false]),
+            ColumnDate::widget(['attr' => 'created_at', 'searchModel' => $searchModel, 'editable' => false]),
 
-            ['class' => GroupedActionColumn::class]
+//            ['class' => GroupedActionColumn::class]
         ]
     ]) ?>
 </div>
