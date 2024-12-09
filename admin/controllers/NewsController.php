@@ -7,10 +7,12 @@ use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
 use common\models\News;
 use common\models\NewsSearch;
+use common\models\Questionnaire;
 use kartik\grid\EditableColumnAction;
 use Throwable;
 use Yii;
 use yii\base\InvalidConfigException;
+use yii\behaviors\TimestampBehavior;
 use yii\db\StaleObjectException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
@@ -33,7 +35,10 @@ final class NewsController extends AdminController
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => ['delete' => ['POST']]
-            ]
+            ],
+            'timestamp' => [
+                'class' => TimestampBehavior::class,
+            ],
         ]);
     }
 
@@ -154,7 +159,10 @@ final class NewsController extends AdminController
         return [
             'change' => [
                 'class' => EditableColumnAction::class,
-                'modelClass' => News::class
+                'modelClass' => News::class,
+                 'outputValue' => static fn(News $news, string $attr) => match ($attr) {
+                    'date' => Yii::$app->formatter->asDate($news->$attr)
+                },
             ]
         ];
     }
