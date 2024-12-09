@@ -47,6 +47,9 @@ class StoryController extends AppController
 
         $provider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 3
+            ]
         ]);
         return $this->returnSuccess([
             'stories' => $provider,

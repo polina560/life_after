@@ -45,12 +45,14 @@ class NewsController extends AppController
 
         $provider = new ActiveDataProvider([
             'query' => $query,
-        ]);
-        return $this->returnSuccess([
-            'news' => $provider,
             'pagination' => [
                 'pageSize' => 3
             ]
+        ]);
+        return $this->returnSuccess([
+            'news_quantity' => count(News::find()->all()),
+            'news' => $provider,
+
 
         ]);
 

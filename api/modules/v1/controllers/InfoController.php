@@ -69,7 +69,7 @@ class InfoController extends AppController
         if($form->load(['name'=> $name, 'email'=>$email, 'moderation_status' => 0, 'created_at' => time()],'') && $form->validate()){
             $form->save();
             return $this->returnSuccess([
-                'info' =>  $form
+                'message' => 'Запрос успешно отправлен',
             ]);
         }
         else {

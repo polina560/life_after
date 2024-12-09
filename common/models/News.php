@@ -6,6 +6,7 @@ use common\models\AppActiveRecord;
 use OpenApi\Attributes\Property;
 use OpenApi\Attributes\Schema;
 use Yii;
+use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -29,6 +30,7 @@ use yii\helpers\ArrayHelper;
 ])]
 class News extends AppActiveRecord
 {
+
     /**
      * {@inheritdoc}
      */
@@ -52,7 +54,6 @@ class News extends AppActiveRecord
     final public function fields(): array
     {
         return [
-            'id',
             'date',
             'title',
             'description',

@@ -79,7 +79,7 @@ class QuestionnaireController extends AppController
             ) && $questionnaire->validate()) {
             $questionnaire->save();
             return $this->returnSuccess([
-                'questionnaire' => $questionnaire
+                'message' => 'Анкета успешно отправлена'
             ]);
         } else {
             return [
