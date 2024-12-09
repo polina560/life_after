@@ -157,7 +157,7 @@ final class InfoController extends AdminController
                 'class' => EditableColumnAction::class,
                 'modelClass' => Info::class,
                 'outputValue' => static fn(Info $info, string $attr) => match ($attr) {
-//                    'created_at' => Yii::$app->formatter->asDate($info->$attr),
+                    'created_at' => Yii::$app->formatter->asDate($info->$attr),
                     'moderation_status' => ModerationStatus::from($info->$attr)->coloredDescription(),
                      default => $info->$attr
                 }

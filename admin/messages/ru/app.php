@@ -195,6 +195,13 @@ return [
     'Request of Additional Information' => 'Запросы дополнительной информации',
     'Form Data' => 'Данные из формы',
 
+    'Moderation Status' => 'Статус модерации',
+    'Full Name' => 'ФИО',
+    'Age' => 'Возраст',
+    'City' => 'Город',
+    'Work' => 'Наличие работы'
+
+
 
 
 ];

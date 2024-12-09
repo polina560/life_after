@@ -36,10 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
             Column::widget(),
             Column::widget(['attr' => 'name', 'editable' => false]),
             Column::widget(['attr' => 'email', 'format' => 'email', 'editable' => false]),
-            ColumnSelect2::widget(['attr' => 'moderation_status', 'items' => ModerationStatus::class, 'hideSearch' => true]),
+            ColumnSelect2::widget(['attr' => 'moderation_status', 'items' =>ModerationStatus::class, 'hideSearch' => true]),
             ColumnDate::widget(['attr' => 'created_at', 'searchModel' => $searchModel, 'editable' => false]),
 
-//            ['class' => GroupedActionColumn::class]
-        ]
+            ['class' => GroupedActionColumn::class,
+                'buttons' => [
+                    'update' => function () {return null;},
+                    'view' => function () {return null;}
+                ]
+            ]        ]
     ]) ?>
 </div>

@@ -5,6 +5,10 @@ namespace admin\controllers;
 use admin\controllers\AdminController;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
+use common\enums\Boolean;
+use common\enums\ModerationStatus;
+use common\enums\UserStatus;
+use common\models\Info;
 use common\models\Questionnaire;
 use common\models\QuestionnaireSearch;
 use kartik\grid\EditableColumnAction;
@@ -154,7 +158,13 @@ final class QuestionnaireController extends AdminController
         return [
             'change' => [
                 'class' => EditableColumnAction::class,
-                'modelClass' => Questionnaire::class
+                'modelClass' => Questionnaire::class,
+                'outputValue' => static fn(Questionnaire $questionnaire, string $attr) => match ($attr) {
+                    'created_at' => Yii::$app->formatter->asDate($questionnaire->$attr),
+                    'status' => UserStatus::from($questionnaire->$attr)->coloredDescription(),
+                    'work' => Boolean::from($questionnaire->$attr)->coloredDescription(),
+                    default => $questionnaire->$attr
+                }
             ]
         ];
     }
