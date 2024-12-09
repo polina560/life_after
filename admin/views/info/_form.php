@@ -7,13 +7,13 @@ use yii\helpers\Url;
 
 /**
  * @var $this     yii\web\View
- * @var $model    common\models\Form
+ * @var $model    common\models\Info
  * @var $form     AppActiveForm
  * @var $isCreate bool
  */
 ?>
 
-<div class="form-form">
+<div class="info-form">
 
     <?php $form = AppActiveForm::begin() ?>
 

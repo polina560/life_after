@@ -3,12 +3,14 @@
 namespace common\models;
 
 use common\models\AppActiveRecord;
+use OpenApi\Attributes\Property;
+use OpenApi\Attributes\Schema;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "{{%form}}".
+ * This is the model class for table "{{%info}}".
  *
  * @property int      $id
  * @property string   $name              Имя
@@ -16,7 +18,13 @@ use yii\helpers\ArrayHelper;
  * @property int|null $moderation_status Статус модерации
  * @property int      $created_at        Дата создания
  */
-class Form extends AppActiveRecord
+#[Schema ( properties: [
+    new Property (property: 'id', type: 'string'),
+    new Property (property: 'name', type: 'string'),
+    new Property (property: 'email', type: 'string'),
+]
+)]
+class Info extends AppActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -36,7 +44,7 @@ class Form extends AppActiveRecord
      */
     public static function tableName(): string
     {
-        return '{{%form}}';
+        return '{{%info}}';
     }
 
     /**

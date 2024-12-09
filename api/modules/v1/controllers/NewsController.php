@@ -34,10 +34,6 @@ class NewsController extends AppController
     )]
     #[JsonSuccess(content: [
         new Property(
-            property: 'news_quantity', type: 'raw',
-            schema: count(News::find()->all()),
-        ),
-        new Property(
             property: 'news', type: 'array',
             items: new Items(ref: '#/components/schemas/News'),
         ),

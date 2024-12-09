@@ -8,9 +8,9 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * FormSearch represents the model behind the search form of `common\models\Form`.
+ * InfoSearch represents the model behind the search form of `common\models\Info`.
  */
-final class FormSearch extends Form
+final class InfoSearch extends Info
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ final class FormSearch extends Form
      */
     public function search(array $params): ActiveDataProvider
     {
-        $query = Form::find();
+        $query = Info::find();
 
         // add conditions that should always apply here
 

@@ -12,12 +12,13 @@ class m241209_073101_create_form_table extends Migration
      */
     final public function safeUp()
     {
-        $this->createTable('{{%form}}', [
-            'id' => $this->primaryKey(),
+        $this->createTable('{{%info}}', [
+            'id' => 'int NOT NULL AUTO_INCREMENT',
             'name' => $this->string()->notNull()->comment('Имя'),
             'email' => $this->string()->notNull()->comment('E-mail'),
             'moderation_status' => $this->boolean()->defaultValue(0)->comment('Статус модерации'),
             'created_at' => $this->integer()->notNull()->comment('Дата создания'),
+            'PRIMARY KEY (id)'
         ]);
     }
 
@@ -26,6 +27,6 @@ class m241209_073101_create_form_table extends Migration
      */
     final public function safeDown()
     {
-        $this->dropTable('{{%form}}');
+        $this->dropTable('{{%form_data}}');
     }
 }

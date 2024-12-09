@@ -13,13 +13,14 @@ class m241209_073152_create_questionnaire_table extends Migration
     final public function safeUp()
     {
         $this->createTable('{{%questionnaire}}', [
-            'id' => $this->primaryKey(),
+            'id' => 'int NOT NULL AUTO_INCREMENT',
             'full_name' => $this->string()->notNull()->comment('ФИО'),
             'age' => $this->integer()->notNull()->comment('Возраст'),
             'city' => $this->string()->notNull()->comment('Город'),
             'status' => $this->integer()->notNull()->comment('Статус'),
             'work' => $this->boolean()->notNull()->comment('Опыт работы'),
             'created_at' => $this->integer()->notNull()->comment('Дата создания'),
+            'PRIMARY KEY (id)'
         ]);
     }
 

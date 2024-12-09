@@ -3,22 +3,22 @@
 use admin\components\widgets\detailView\Column;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
-use common\models\FormSearch;
+use common\models\InfoSearch;
 use yii\widgets\DetailView;
 
 /**
  * @var $this  yii\web\View
- * @var $model common\models\Form
+ * @var $model common\models\Info
  */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = [
-    'label' => Yii::t('app', 'Forms'),
-    'url' => UserUrl::setFilters(FormSearch::class)
+    'label' => Yii::t('app', 'Infos'),
+    'url' => UserUrl::setFilters(InfoSearch::class)
 ];
 $this->params['breadcrumbs'][] = RbacHtml::encode($this->title);
 ?>
-<div class="form-view">
+<div class="info-view">
 
     <h1><?= RbacHtml::encode($this->title) ?></h1>
 

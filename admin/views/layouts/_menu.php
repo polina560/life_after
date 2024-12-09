@@ -5,7 +5,15 @@ use admin\models\UserAdminSearch;
 use admin\modules\modelExportImport\models\ModelImportLogSearch;
 use admin\modules\rbac\components\RbacNav;
 use common\components\helpers\UserUrl;
-use common\models\{ExportListSearch, Form, NewsSearch, PartnerSearch, QuestionnaireSearch, StorySearch, TextSearch};
+use common\models\{ExportListSearch,
+    Form,
+    FormDataSearch,
+    InfoSearch,
+    NewsSearch,
+    PartnerSearch,
+    QuestionnaireSearch,
+    StorySearch,
+    TextSearch};
 use common\modules\log\Log;
 use common\modules\mail\models\{MailingLogSearch, MailingSearch, MailTemplateSearch};
 use common\modules\notification\widgets\NotificationBell;
@@ -66,7 +74,7 @@ if (!Yii::$app->user->isGuest) {
                 ],
                 [
                     'label' => Yii::t('app', 'Form Data'),
-                    'url' => UserUrl::setFilters(Form::class, ['/form/index'])
+                    'url' => UserUrl::setFilters(InfoSearch::class, ['/info/index'])
                 ],
             ]
         ],

@@ -3,6 +3,8 @@
 namespace common\models;
 
 use common\models\AppActiveRecord;
+use OpenApi\Attributes\Property;
+use OpenApi\Attributes\Schema;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
@@ -18,6 +20,16 @@ use yii\helpers\ArrayHelper;
  * @property int    $work       Опыт работы
  * @property int    $created_at Дата создания
  */
+
+#[Schema ( properties: [
+    new Property (property: 'id', type: 'string'),
+    new Property (property: 'full_name', type: 'string'),
+    new Property (property: 'age', type: 'string'),
+    new Property (property: 'city', type: 'string'),
+    new Property (property: 'status', type: 'string'),
+    new Property (property: 'work', type: 'string'),
+]
+)]
 class Questionnaire extends AppActiveRecord
 {
     /**

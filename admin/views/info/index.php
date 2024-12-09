@@ -10,21 +10,21 @@ use yii\widgets\ListView;
 
 /**
  * @var $this         yii\web\View
- * @var $searchModel  common\models\FormSearch
+ * @var $searchModel  common\models\InfoSearch
  * @var $dataProvider yii\data\ActiveDataProvider
- * @var $model        common\models\Form
+ * @var $model        common\models\Info
  */
 
-$this->title = Yii::t('app', 'Forms');
+$this->title = Yii::t('app', 'Infos');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="form-index">
+<div class="info-index">
 
     <h1><?= RbacHtml::encode($this->title) ?></h1>
 
     <div>
         <?= 
-            RbacHtml::a(Yii::t('app', 'Create Form'), ['create'], ['class' => 'btn btn-success']);
+            RbacHtml::a(Yii::t('app', 'Create Info'), ['create'], ['class' => 'btn btn-success']);
 //           $this->render('_create_modal', ['model' => $model]);
         ?>
     </div>
