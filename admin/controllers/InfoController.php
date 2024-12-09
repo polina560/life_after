@@ -5,6 +5,7 @@ namespace admin\controllers;
 use admin\controllers\AdminController;
 use admin\modules\rbac\components\RbacHtml;
 use common\components\helpers\UserUrl;
+use common\enums\ModerationStatus;
 use common\models\Info;
 use common\models\InfoSearch;
 use kartik\grid\EditableColumnAction;
@@ -154,7 +155,12 @@ final class InfoController extends AdminController
         return [
             'change' => [
                 'class' => EditableColumnAction::class,
-                'modelClass' => Info::class
+                'modelClass' => Info::class,
+                'outputValue' => static fn(Info $info, string $attr) => match ($attr) {
+//                    'created_at' => Yii::$app->formatter->asDate($info->$attr),
+                    'moderation_status' => ModerationStatus::from($info->$attr)->coloredDescription(),
+                     default => $info->$attr
+                }
             ]
         ];
     }
