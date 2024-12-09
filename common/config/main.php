@@ -59,7 +59,7 @@ return [
             'currencyCode' => 'RUB',
             'timeFormat' => 'php:H:i:s',
             'dateFormat' => 'php:d.m.Y',
-            'datetimeFormat' => 'php:d.m.Y',
+            'datetimeFormat' => 'php:d.m.Y H:i',
         ],
 
         'mailer' => [

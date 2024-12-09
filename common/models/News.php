@@ -54,7 +54,7 @@ class News extends AppActiveRecord
     final public function fields(): array
     {
         return [
-            'date',
+            'date' => fn() => Yii::$app->formatter->asDate($this->date),
             'title',
             'description',
             'link'

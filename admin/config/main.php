@@ -25,7 +25,7 @@ $params = array_merge(
 
 return [
     'id' => ModuleHelper::ADMIN,
-    'name' => 'PROJECT NAME',
+    'name' => 'LIFE AFTER',
     'homeUrl' => $basePath . $module,
     'basePath' => dirname(__DIR__),
     'sourceLanguage' => 'en-US',
@@ -101,7 +101,7 @@ return [
 
         'formatter' => [
             'nullDisplay' => Html::tag('span', 'Не задано', ['class' => 'text-muted']),
-            'datetimeFormat' => 'd-M-Y',
+            'datetimeFormat' => 'php:d.m.Y H:i',
         ],
 
         'view' => [

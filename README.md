@@ -1,4 +1,4 @@
-# Yii2 Backend Template
+-u# Yii2 Backend Template
 
 Основа для backend проекта основанная на Yii2 Framework с интегрированным VueJS
 Описание API: [phpDocumentor](https://docs.dev.peppers-studio.ru/yii-template/)
