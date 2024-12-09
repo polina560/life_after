@@ -5,7 +5,7 @@ use admin\models\UserAdminSearch;
 use admin\modules\modelExportImport\models\ModelImportLogSearch;
 use admin\modules\rbac\components\RbacNav;
 use common\components\helpers\UserUrl;
-use common\models\{ExportListSearch, NewsSearch, PartnerSearch, StorySearch, TextSearch};
+use common\models\{ExportListSearch, Form, NewsSearch, PartnerSearch, QuestionnaireSearch, StorySearch, TextSearch};
 use common\modules\log\Log;
 use common\modules\mail\models\{MailingLogSearch, MailingSearch, MailTemplateSearch};
 use common\modules\notification\widgets\NotificationBell;
@@ -57,12 +57,20 @@ if (!Yii::$app->user->isGuest) {
                 ],
             ]
         ],
-        ['label' => Icon::show('chart-bar') . 'Статистика', 'url' => ['/statistic/index']],
         [
-            'label' => Icon::show('users') . 'Пользователи',
-            'url' => UserUrl::setFilters(UserSearch::class, ['/user/user/index']),
-            'visible' => (bool)Yii::$app->getModule('user')
+            'label' => Icon::show('file-alt') . 'Данные участников',
+            'items' => [
+                [
+                    'label' => Yii::t('app', 'Questionnaires Data'),
+                    'url' => UserUrl::setFilters(QuestionnaireSearch::class, ['/questionnaire/index'])
+                ],
+                [
+                    'label' => Yii::t('app', 'Form Data'),
+                    'url' => UserUrl::setFilters(Form::class, ['/form/index'])
+                ],
+            ]
         ],
+        ['label' => Icon::show('chart-bar') . 'Статистика', 'url' => ['/statistic/index']],
         [
             'label' => Icon::show('cogs') . 'Управление',
             'items' => [

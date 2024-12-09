@@ -178,6 +178,7 @@ return [
     'Logo' => 'Логотип',
 
     'Story' => 'История',
+    'Stories' => 'Истории',
     'Accusation' => 'Обвинение',
     'Additional Information' => 'Дополнительная информация',
     'Desktop Photo' => 'Фотография для десктопа',
@@ -188,6 +189,9 @@ return [
     'Create Partner' => 'Добавить партнера',
     'Create News' => 'Добавить новость',
     'Create Story' => 'Добавить историю',
+
+    'Questionnaire Data' => 'Данные из анкеты',
+    'Form Data' => 'Данные из формы',
 
 
 

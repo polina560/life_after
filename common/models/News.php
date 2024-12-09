@@ -18,7 +18,8 @@ use yii\helpers\ArrayHelper;
  * @property string      $link        Ссылка
  */
 
-#[Schema (properties: [
+#[Schema (
+    properties: [
     new Property(property: 'id', type: 'integer'),
     new Property(property: 'date', type: 'integer'),
     new Property(property: 'title', type: 'string'),
@@ -51,6 +52,7 @@ class News extends AppActiveRecord
     final public function fields(): array
     {
         return [
+
             'id',
             'date',
             'title',

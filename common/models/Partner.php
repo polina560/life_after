@@ -50,7 +50,7 @@ class Partner extends AppActiveRecord
         return [
             'id',
             'title',
-            'logo' => Yii::$app->request->hostInfo . $this->logo,
+            'logo'  => fn() => Yii::$app->request->hostInfo . $this->logo,
             'link'
         ];
     }
