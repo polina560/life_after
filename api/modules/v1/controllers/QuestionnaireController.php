@@ -37,8 +37,8 @@ class QuestionnaireController extends AppController
             new Property(property: 'full_name', description: 'Имя', type: 'string'),
             new Property(property: 'age', description: 'Возраст', type: 'integer'),
             new Property(property: 'city', description: 'Город', type: 'string'),
-            new Property(property: 'status', description: 'Статус', type: 'integer'),
-            new Property(property: 'work', description: 'Наличие работы', type: 'boolean'),
+            new Property(property: 'status', description: 'Статус: 0 - на свободе, 10 - условный срок', type: 'integer'),
+            new Property(property: 'work', description: 'Наличие работы: 0 - нет, 1 - да', type: 'boolean'),
         ]
     )]
     #[JsonSuccess(content: [
